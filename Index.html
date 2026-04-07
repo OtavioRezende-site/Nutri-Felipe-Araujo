@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felipe Araújo | Nutricionista Clínico & Esportivo</title>
+    <meta name="description" content="Nutricionista Clínico & Esportivo no Rio de Janeiro (Flamengo) e Online. Estratégia nutricional personalizada para performance e emagrecimento.">
+    
+    <link rel="icon" type="image/png" href="public/logo-felipe.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #1a1a1a; /* Grafite / Chumbo */
+            --secondary: #f8f9fa; /* Off-white */
+            --accent: #1b4332; /* Verde profundo */
+            --highlight: #c5a059; /* Dourado / Mostarda */
+            --text-dark: #000000;
+            --text-light: #ffffff;
+            --gray-light: #e9ecef;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--secondary);
+            color: var(--primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2d6a4f;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(27, 67, 50, 0.2);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .logo span {
+            color: var(--highlight);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--primary);
+        }
+
+        .nav-links a:hover {
+            color: var(--highlight);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            background-color: var(--primary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, transparent 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #ccc;
+            max-width: 600px;
+        }
+
+        .hero-bullets {
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .hero-bullets li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .hero-bullets svg {
+            color: var(--highlight);
+            flex-shrink: 0;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            object-position: center 20%;
+            border-radius: 8px;
+            box-shadow: 20px 20px 0px var(--highlight);
+            display: block;
+        }
+
+        /* Social Proof */
+        .social-proof {
+            padding: 40px 0;
+            background-color: white;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .proof-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            text-align: center;
+        }
+
+        .proof-item h3 {
+            font-size: 32px;
+            color: var(--highlight);
+            margin-bottom: 5px;
+        }
+
+        .proof-item p {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #666;
+        }
+
+        /* Dores / Identificação */
+        .pains {
+            padding: 100px 0;
+            background-color: var(--secondary);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: #666;
+        }
+
+        .pains-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .pain-card {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+        }
+
+        .pain-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--highlight);
+        }
+
+        .pain-card svg {
+            width: 40px;
+            height: 40px;
+            color: var(--highlight);
+            margin-bottom: 20px;
+        }
+
+        .pain-card h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        /* Benefícios */
+        .benefits {
+            padding: 100px 0;
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .benefit-card h4 {
+            color: var(--highlight);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        /* Como Funciona */
+        .process {
+            padding: 100px 0;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            position: relative;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--highlight);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+        }
+
+        .step h4 {
+            margin-bottom: 10px;
+        }
+
+        /* Áreas de Atuação */
+        .areas {
+            padding: 100px 0;
+            background-color: var(--secondary);
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .area-card {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .area-card h4 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .area-card p {
+            margin-bottom: 25px;
+            color: #666;
+        }
+
+        /* Serviços */
+        .services {
+            padding: 100px 0;
+            background-color: var(--secondary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-card.featured {
+            border: 2px solid var(--highlight);
+        }
+
+        .service-badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--highlight);
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .service-card h4 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .service-price {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--highlight);
+            margin-bottom: 5px;
+        }
+
+        .service-duration {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .service-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .service-card .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Resultados */
+        .results {
+            padding: 100px 0;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .result-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 500px;
+        }
+
+        .result-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: var(--transition);
+        }
+
+        .result-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .result-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+        }
+
+        /* Depoimentos */
+        .testimonials {
+            padding: 100px 0;
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 8px;
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '“';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 60px;
+            color: var(--highlight);
+            opacity: 0.3;
+        }
+
+        /* Sobre */
+        .about {
+            padding: 100px 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image img {
+            border-radius: 8px;
+            box-shadow: -20px 20px 0px var(--highlight);
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .about-text h2 {
+            margin-bottom: 25px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        /* Consultório */
+        .clinic {
+            padding: 100px 0;
+            background-color: var(--secondary);
+        }
+
+        .clinic-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .clinic-map {
+            border-radius: 8px;
+            height: 450px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .clinic-map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        .clinic-info h3 {
+            margin-bottom: 20px;
+        }
+
+        .clinic-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 100px 0;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--gray-light);
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: #666;
+            margin-top: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            margin-top: 15px;
+        }
+
+        .faq-item.active svg {
+            transform: rotate(180deg);
+        }
+
+        /* CTA Final */
+        .cta-final {
+            padding: 100px 0;
+            background-color: var(--highlight);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-final h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .cta-final p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0 30px;
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 20px;
+            color: var(--highlight);
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100%;
+            background: white;
+            z-index: 2000;
+            padding: 80px 40px;
+            transition: 0.4s;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 25px;
+        }
+
+        .mobile-menu ul li a {
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1500;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero::before { width: 100%; opacity: 0.5; }
+            .hero-text h1 { font-size: 36px; }
+            .hero-text p { margin-left: auto; margin-right: auto; }
+            .hero-bullets { justify-content: center; }
+            .hero-btns { justify-content: center; }
+            .hero-image img { height: 400px; }
+            
+            .about-content, .clinic-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-image { order: 2; }
+            .about-text { order: 1; }
+            
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+        }
+
+        @media (max-width: 600px) {
+            .hero-bullets { grid-template-columns: 1fr; text-align: left; max-width: 300px; margin-left: auto; margin-right: auto; }
+            .hero-btns .btn { width: 100%; }
+            .proof-grid { flex-direction: column; }
+            .cta-final h2 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="public/logo-felipe.png" alt="Logo Felipe Araújo" style="height: 40px; display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';">
+                    <span>FELIPE <span>ARAÚJO</span></span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#beneficios">Benefícios</a></li>
+                    <li><a href="#atuacao">Atuação</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#resultados">Resultados</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="https://wa.me/5521983651859?text=Olá%20Felipe!%20Vi%20seu%20site%20e%20quero%20saber%20mais%20sobre%20seu%20acompanhamento%20nutricional." class="btn btn-primary" style="padding: 10px 20px;">WhatsApp</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="openMenu">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="overlay" id="overlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button id="closeMenu" style="position: absolute; top: 20px; right: 20px; background: none; border: none;">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#beneficios">Benefícios</a></li>
+            <li><a href="#atuacao">Atuação</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#resultados">Resultados</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        <a href="https://wa.me/5521983651859?text=Olá%20Felipe!%20Vi%20seu%20site%20e%20quero%20saber%20mais%20sobre%20seu%20acompanhamento%20nutricional." class="btn btn-primary" style="width: 100%;">Falar no WhatsApp</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Resultados consistentes começam com uma estratégia nutricional feita para a sua realidade.</h1>
+                    <p>Emagreça, melhore sua performance e cuide da sua saúde com um acompanhamento personalizado, baseado em ciência e adaptado à sua rotina — sem extremismos e sem abrir mão do que faz sentido para você.</p>
+                    
+                    <ul class="hero-bullets">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Atendimento clínico e esportivo
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Plano alimentar individualizado
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Presencial no Flamengo e online
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Acompanhamento humanizado
+                        </li>
+                    </ul>
+
+                    <div class="hero-btns">
+                        <a href="https://wa.me/5521983651859?text=Olá%20Felipe!%20Vi%20seu%20site%20e%20quero%20iniciar%20minha%20estratégia%20nutricional%20personalizada." class="btn btn-primary">Quero falar com o nutricionista</a>
+                        <a href="#servicos" class="btn btn-outline" style="border-color: white; color: white;">Ver serviços e preços</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="public/file_000000001da871f59459d684750f559b.png" alt="Felipe Araújo Nutricionista" onerror="this.src='https://picsum.photos/seed/nutritionist/800/1000'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prova Social -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="proof-grid">
+                <div class="proof-item">
+                    <h3>5.0</h3>
+                    <p>Nota no Google</p>
+                </div>
+                <div class="proof-item">
+                    <h3>+45</h3>
+                    <p>Avaliações Reais</p>
+                </div>
+                <div class="proof-item">
+                    <h3>Híbrido</h3>
+                    <p>Presencial & Online</p>
+                </div>
+                <div class="proof-item">
+                    <h3>Expert</h3>
+                    <p>Clínico & Esportivo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dores -->
+    <section class="pains">
+        <div class="container">
+            <div class="section-header">
+                <h2>Você se identifica com algum desses cenários?</h2>
+                <p>Muitas pessoas buscam resultados, mas acabam presas em ciclos que não levam a lugar nenhum.</p>
+            </div>
+            <div class="pains-grid">
+                <div class="pain-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+                    <h4>Treino sem evolução</h4>
+                    <p>Você se esforça na academia, mas o espelho e a balança parecem não mudar.</p>
+                </div>
+                <div class="pain-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+                    <h4>Efeito Sanfona</h4>
+                    <p>Consegue emagrecer, mas não mantém. Falta uma estratégia sustentável.</p>
+                </div>
+                <div class="pain-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+                    <h4>Dieta Genérica</h4>
+                    <p>Cansado de planos que não consideram seus gostos, rotina ou objetivos reais.</p>
+                </div>
+                <div class="pain-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+                    <h4>Falta de Energia</h4>
+                    <p>Sente-se cansado durante o dia e sem rendimento nos treinos por má alimentação.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="benefits" id="beneficios">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white;">O que você ganha com o acompanhamento</h2>
+                <p style="color: #aaa;">Uma abordagem completa para transformar sua saúde e seu corpo.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h4>Emagrecimento Sustentável</h4>
+                    <p>Perca gordura sem passar fome e sem dietas restritivas que você não consegue manter.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Performance Máxima</h4>
+                    <p>Ajuste sua ingestão de nutrientes para render mais nos treinos e acelerar a recuperação.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Composição Corporal</h4>
+                    <p>Estratégias focadas em ganho de massa muscular e definição estética.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Saúde Metabólica</h4>
+                    <p>Controle de exames, melhora da sensibilidade à insulina e saúde cardiovascular.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Plano Realista</h4>
+                    <p>Um cardápio que se encaixa na sua vida, não o contrário. Praticidade é a chave.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Apoio Contínuo</h4>
+                    <p>Você não estará sozinho. Suporte para dúvidas e ajustes durante todo o processo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>Como funciona o acompanhamento</h2>
+                <p>Um passo a passo estruturado para garantir sua evolução.</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Avaliação</h4>
+                    <p>Análise de objetivos, rotina, exames e composição corporal.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Estratégia</h4>
+                    <p>Criação do plano alimentar 100% personalizado para você.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Aplicação</h4>
+                    <p>Você coloca em prática com meu suporte total para dúvidas.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Ajustes</h4>
+                    <p>Monitoramento constante e refinamento da estratégia conforme resultados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Áreas de Atuação -->
+    <section class="areas" id="atuacao">
+        <div class="container">
+            <div class="section-header">
+                <h2>Áreas de Atuação</h2>
+                <p>Soluções específicas para cada necessidade.</p>
+            </div>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <div>
+                        <h4>Emagrecimento</h4>
+                        <p>Foco em perda de gordura preservando massa magra e saúde.</p>
+                    </div>
+                    <a href="https://wa.me/5521983651859?text=Olá%20Felipe!%20Vi%20no%20seu%20site%20seu%20acompanhamento%20para%20emagrecimento%20e%20quero%20entender%20como%20funciona." target="_blank" class="btn btn-outline">Saiba mais</a>
+                </div>
+                <div class="area-card">
+                    <div>
+                        <h4>Performance Esportiva</h4>
+                        <p>Nutrição avançada para atletas e entusiastas do esporte.</p>
+                    </div>
+                    <a href="https://wa.me/5521983651859?text=Olá%20Felipe!%20Vi%20no%20seu%20site%20seu%20acompanhamento%20esportivo%20e%20quero%20saber%20mais." target="_blank" class="btn btn-outline">Saiba mais</a>
+                </div>
+                <div class="area-card">
+                    <div>
+                        <h4>Composição Corporal</h4>
+                        <p>Hipertrofia e definição com estratégia nutricional precisa.</p>
+                    </div>
+                    <a href="https://wa.me/5521983651859?text=Olá%20Felipe!%20Vi%20no%20seu%20site%20seu%20acompanhamento%20para%20composição%20corporal%20e%20quero%20mais%20informações." target="_blank" class="btn btn-outline">Saiba mais</a>
+                </div>
+                <div class="area-card">
+                    <div>
+                        <h4>Saúde Metabólica</h4>
+                        <p>Tratamento de diabetes, hipertensão e dislipidemias.</p>
+                    </div>
+                    <a href="https://wa.me/5521983651859?text=Olá%20Felipe!%20Vi%20no%20seu%20site%20seu%20acompanhamento%20voltado%20para%20saúde%20metabólica%20e%20quero%20saber%20mais." target="_blank" class="btn btn-outline">Saiba mais</a>
+                </div>
+                <div class="area-card">
+                    <div>
+                        <h4>Atendimento Online</h4>
+                        <p>A mesma qualidade do presencial, no conforto da sua casa.</p>
+                    </div>
+                    <a href="https://wa.me/5521983651859?text=Olá%20Felipe!%20Vi%20no%20seu%20site%20que%20você%20atende%20online%20e%20quero%20entender%20como%20funciona." target="_blank" class="btn btn-outline">Saiba mais</a>
+                </div>
+                <div class="area-card">
+                    <div>
+                        <h4>Consulta Individual</h4>
+                        <p>Agende sua sessão e comece sua transformação hoje.</p>
+                    </div>
+                    <a href="https://wa.me/5521983651859?text=Olá%20Felipe!%20Vi%20seu%20site%20e%20quero%20agendar%20uma%20consulta." target="_blank" class="btn btn-outline">Saiba mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="services" id="servicos">
+        <div class="container">
+            <div class="section-header">
+                <h2>Serviços & Investimento</h2>
+                <p>Escolha a melhor modalidade para sua jornada de transformação.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Serviço 1 -->
+                <div class="service-card">
+                    <h4>Consulta | Nutricionista</h4>
+                    <div class="service-price">R$ 397</div>
+                    <div class="service-duration">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        Duração: 1h
+                    </div>
+                    <p class="service-description">Consulta personalizada para avaliar saúde, hábitos alimentares e objetivos como emagrecimento, ganho de massa muscular ou equilíbrio nutricional. Elaboração de plano alimentar ajustado às suas necessidades.</p>
+                    <a href="https://wa.me/5521983651859?text=Olá%20Felipe!%20Vi%20no%20seu%20site%20o%20serviço%20de%20Consulta%20Nutricional%20e%20gostaria%20de%20agendar%20um%20horário." target="_blank" class="btn btn-outline">Agendar Consulta</a>
+                </div>
+
+                <!-- Serviço 2 -->
+                <div class="service-card featured">
+                    <div class="service-badge">Destaque</div>
+                    <h4>Acompanhamento Trimestral Premium</h4>
+                    <div class="service-price">R$ 797</div>
+                    <div class="service-duration">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        Duração: 1h (por sessão)
+                    </div>
+                    <p class="service-description">Acompanhamento completo durante três meses, com consultas regulares para avaliar resultados e realizar ajustes. Suporte contínuo e orientação personalizada para resultados consistentes.</p>
+                    <a href="https://wa.me/5521983651859?text=Olá%20Felipe!%20Tenho%20interesse%20no%20Acompanhamento%20Trimestral%20Premium%20e%20gostaria%20de%20entender%20melhor%20como%20funciona." target="_blank" class="btn btn-primary">Quero o Premium</a>
+                </div>
+
+                <!-- Serviço 3 -->
+                <div class="service-card">
+                    <h4>Avaliação Antropométrica</h4>
+                    <div class="service-price">R$ 100</div>
+                    <div class="service-duration">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        Duração: 1h
+                    </div>
+                    <p class="service-description">Avaliação da composição corporal por meio de medidas como peso, altura, circunferências e dobras cutâneas. Dados essenciais para ajustes precisos em treinos e plano alimentar.</p>
+                    <a href="https://wa.me/5521983651859?text=Olá%20Felipe!%20Gostaria%20de%20agendar%20uma%20Avaliação%20Antropométrica%20para%20verificar%20minha%20composição%20corporal." target="_blank" class="btn btn-outline">Agendar Avaliação</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resultados -->
+    <section class="results" id="resultados">
+        <div class="container">
+            <div class="section-header">
+                <h2>Evolução Real</h2>
+                <p>Resultados de pacientes que confiaram na estratégia e no processo.</p>
+            </div>
+            <div class="results-grid">
+                <div class="result-item">
+                    <img src="public/Design%20sem%20nome_20260407_170609_0000.png" alt="Resultado Evolução 01" onerror="this.src='https://picsum.photos/seed/res1/400/500'">
+                    <div class="result-overlay">
+                        <strong>Emagrecimento & Definição</strong>
+                    </div>
+                </div>
+                <div class="result-item">
+                    <img src="public/AISelect_20260407_165859_Instagram.jpg" alt="Resultado Evolução 02" onerror="this.src='https://picsum.photos/seed/res2/400/500'">
+                    <div class="result-overlay">
+                        <strong>Hipertrofia Muscular</strong>
+                    </div>
+                </div>
+                <div class="result-item">
+                    <img src="public/AISelect_20260407_165838_Instagram.jpg" alt="Resultado Evolução 03" onerror="this.src='https://picsum.photos/seed/res3/400/500'">
+                    <div class="result-overlay">
+                        <strong>Performance Esportiva</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white;">O que dizem os pacientes</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Eu consegui resultados ótimos, o que me fez confiar muito no trabalho dele. A dieta é super tranquila de seguir."</p>
+                    <div style="margin-top: 20px; color: var(--highlight); font-weight: 700;">— Paciente Satisfeito</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Ótimo nutricionista, indico a todos sem pensar duas vezes. Muito atencioso e explica tudo com base científica."</p>
+                    <div style="margin-top: 20px; color: var(--highlight); font-weight: 700;">— Paciente Satisfeito</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Realmente é um profissional difícil de se encontrar no mercado. Humanizado e focado no meu objetivo real."</p>
+                    <div style="margin-top: 20px; color: var(--highlight); font-weight: 700;">— Paciente Satisfeito</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section class="about" id="sobre">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="public/AISelect_20260407_171101_Instagram.jpg" alt="Felipe Araújo" onerror="this.src='https://picsum.photos/seed/felipe/600/800'">
+                </div>
+                <div class="about-text">
+                    <h2>Felipe Araújo</h2>
+                    <p>Olá, sou Felipe Araújo, nutricionista esportivo. Minha missão é ajudar pessoas a alcançarem seus objetivos de forma eficiente e personalizada. Tenho experiência no tratamento de doenças metabólicas como diabetes, hipertensão e dislipidemias, além de atuar com atletas e praticantes de atividades físicas que desejam melhorar sua performance e qualidade de vida.</p>
+                    <p>Minha abordagem é baseada em ciência e humanização. Trabalho para unir saúde, performance e bem-estar em um único plano. Com pós-graduações em Bodybuilding, Emagrecimento & Metabolismo e Nutrição Comportamental & Clínica pela faculdade Uniguaçu, estou sempre me atualizando para oferecer o melhor suporte aos meus pacientes.</p>
+                    <a href="https://wa.me/5521983651859?text=Olá%20Felipe!%20Vi%20seu%20site%20e%20quero%20conhecer%20mais%20sobre%20seu%20trabalho%20como%20nutricionista." class="btn btn-primary">Conhecer mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultório -->
+    <section class="clinic" id="contato">
+        <div class="container">
+            <div class="clinic-grid">
+                <div class="clinic-info">
+                    <h3>Onde Atendo</h3>
+                    <p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=R.+Alm.+Tamandaré,+66+-+sala+548+-+Flamengo,+Rio+de+Janeiro+-+RJ,+22210-060" target="_blank" style="display: flex; align-items: center; gap: 10px; color: inherit;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span>R. Alm. Tamandaré, 66 - sala 548 - Flamengo, Rio de Janeiro - RJ, 22210-060</span>
+                        </a>
+                    </p>
+                    <p>
+                        <a href="tel:21983651859" style="display: flex; align-items: center; gap: 10px; color: inherit;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <span>(21) 98365-1859</span>
+                        </a>
+                    </p>
+                    <div style="margin-top: 30px; display: flex; gap: 15px;">
+                        <a href="https://wa.me/5521983651859?text=Olá%20Felipe!%20Vi%20seu%20site%20e%20quero%20saber%20mais%20sobre%20o%20atendimento%20presencial%20no%20Flamengo." class="btn btn-primary">WhatsApp</a>
+                    </div>
+                </div>
+                <div class="clinic-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3673.804860477045!2d-43.1793744!3d-22.9205556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f6004949494%3A0x9459d684750f559b!2sR.%20Alm.%20Tamandar%C3%A9%2C%2066%20-%20sala%20548%20-%20Flamengo%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022210-060!5e0!3m2!1spt-BR!2sbr!4v1712517000000!5m2!1spt-BR!2sbr" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dúvidas Frequentes</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Onde fica o consultório?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        O consultório está localizado no Flamengo, Rio de Janeiro, na Rua Almirante Tamandaré, 66 - sala 548.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        O atendimento pode ser online?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        Sim! Realizo atendimentos online para pacientes de todo o Brasil e do exterior, com a mesma qualidade e profundidade do presencial.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Você atende plano de saúde?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        Atendo de forma particular, mas forneço recibo para que você possa solicitar o reembolso junto ao seu plano de saúde.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Como funciona o acompanhamento?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        O acompanhamento inclui a consulta inicial (avaliação completa), entrega do plano alimentar personalizado via aplicativo, suporte para dúvidas e retornos periódicos para ajustes.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Quais são as formas de pagamento?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        Aceito Pix, cartões de débito e crédito (com possibilidade de parcelamento).
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        O atendimento serve para emagrecimento e performance?
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        Sim, sou especialista em ambas as áreas. Minha abordagem une a saúde clínica com a performance esportiva para resultados estéticos e de saúde.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Pronto para começar sua evolução?</h2>
+            <p>Não deixe para depois a saúde e o corpo que você pode começar a construir hoje mesmo.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://wa.me/5521983651859?text=Olá%20Felipe!%20Vi%20seu%20site%20e%20estou%20pronto%20para%20começar%20minha%20evolução%20nutricional." class="btn btn-primary" style="background-color: var(--primary);">Falar no WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <div class="footer-logo">FELIPE <span>ARAÚJO</span></div>
+                    <p>Nutricionista Clínico & Esportivo</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#beneficios">Benefícios</a></li>
+                        <li><a href="#atuacao">Atuação</a></li>
+                        <li><a href="#resultados">Resultados</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="tel:21983651859">(21) 98365-1859</a></li>
+                        <li><a href="https://www.instagram.com/felipearaujo.nutri/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=R.+Alm.+Tamandaré,+66+-+Flamengo,+Rio+de+Janeiro+-+RJ" target="_blank" rel="noopener noreferrer">R. Alm. Tamandaré, 66 - Flamengo, RJ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Felipe Araújo Nutrição. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Logic
+        const openMenu = document.getElementById('openMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('overlay');
+        const mobileLinks = document.querySelectorAll('.mobile-menu a');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        openMenu.addEventListener('click', toggleMenu);
+        closeMenu.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // FAQ Logic
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
